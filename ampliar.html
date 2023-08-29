@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Imagen Ampliada</title>
+</head>
+<body>
+    <img src="" alt="Imagen Ampliada" id="imagenAmpliada" />
+
+    <script>
+        // Obtener el valor del parámetro de URL (nombre de la imagen)
+        var urlParams = new URLSearchParams(window.location.search);
+        var imagenSrc = urlParams.get('imagen');
+
+        // Establecer la fuente de la imagen ampliada
+        var imagenAmpliada = document.getElementById('imagenAmpliada');
+        imagenAmpliada.src = imagenSrc;
+
+        // Cerrar la ventana al hacer clic en la imagen ampliada
+        imagenAmpliada.addEventListener('click', cerrarVentana);
+
+        // Función para cerrar la ventana
+        function cerrarVentana() {
+            window.close();
+        }
+    </script>
+</body>
+</html>
